@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>طومارنت</title>
+    <script src="js/script.js"></script>
+
+</head>
+<body>
+    <button class="logo-button" onclick="toggleMenu()">
+        <img src="images/طومارنت.png" alt="شعار طومارنت">
+      </button>
+      
+  
+    <header class="site-header">
+      <div class="header-content">
+        <div class="header-center">طومارنت</div>
+      </div>
+    </header>
+
+    <main class="homepage">
+
+        <div class="search-section">
+            <form class="search-form" action="#" method="get">
+              <input type="text" name="search" placeholder="ابحث عن مقال..." />
+              <button type="submit">🔍</button>
+            </form>
+          </div>
+          <div id="searchResults" class="card-grid" style="margin-top: 20px;"></div>
+
+          
+<h1>مرحبًا بكم في طومارنت</h1>
+        <h2 class="section-title">أحدث المقالات</h2>
+       <h2>مقال مميز</h2>
+            <p>اكتشف مقالاتنا المميزة التي تعكس أفكارًا جديدة وتجارب ملهمة.</p>
+
+            <hr>
+        <section class="featured-article">
+     
+            <img src="images/طومارنت.png" alt="مقال مميز">
+            <div class="featured-content">
+              <h2><a href="articles/article1.html">مقال مميز: قوة المعرفة</a></h2>
+              <p>تعرف على كيف يمكن لفكرة واحدة أن تغيّر مسار حضارة كاملة، ولماذا المعرفة هي مفتاح المستقبل...</p>
+            </div>
+          </section>
+          
+          <div class="category-filters">
+            <button onclick="filterArticles('all')">الكل</button>
+            <button onclick="filterArticles('علم')">علم</button>
+            <button onclick="filterArticles('تاريخ')">تاريخ</button>
+            <button onclick="filterArticles('أدب')">أدب</button>
+          </div>
+          
+      
+          <div id="homepageArticles" class="card-grid"></div>
+
+        <section class="category-banners">
+            <h2 class="section-title">استكشف حسب التصنيف</h2>
+          
+            <div class="category-grid">
+              <a href="categories/ilm.html" class="category-box">📘 علم</a>
+              <a href="categories/fikr.html" class="category-box">📙 فكر</a>
+              <a href="categories/adab.html" class="category-box">📗 أدب</a>
+              <a href="categories/tarikh.html" class="category-box">📕 تاريخ</a>
+            </div>
+          </section>
+          
+      </main>
+      
+      
+    <nav class="slide-menu" id="navMenu">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li class="has-submenu">
+            <a href="#">المقالات ▾</a>
+            <ul class="submenu">
+              <li><a href="categories/ilm.html">علم</a></li>
+              <li><a href="categories/kutub.html">كتب</a></li>
+              <li><a href="categories/fikr.html">فكر</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="about.html">حول طومارنت</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </nav>
+      
+      
+      
+
+    
+
+    <footer>
+        <p>&copy; ٢٠٢٥ طومارنت - جميع الحقوق محفوظة</p>
+      </footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('navMenu');
+  menu.classList.toggle('active');
+}
+
+// toggle submenu when clicking on "المقالات"
+document.addEventListener('DOMContentLoaded', function () {
+  const submenuTrigger = document.querySelector('.has-submenu > a');
+  submenuTrigger.addEventListener('click', function (e) {
+    e.preventDefault(); // prevent "#" from jumping
+    this.parentElement.classList.toggle('active');
+  });
+});
+</script>
+
+        
+        
+      
+</body>
+</html>

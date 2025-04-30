@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+  <title>أول مقالة - مكتبتي</title>
+</head>
+<body>
+    <button class="logo-button" onclick="toggleMenu()">
+        <img src="images/طومارنت.png" alt="شعار طومارنت">
+      </button>
+      
+  
+    <header class="site-header">
+      <div class="header-content">
+        <div class="header-center">طومارنت</div>
+      </div>
+    </header>
+
+    <nav class="slide-menu" id="navMenu">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li class="has-submenu">
+            <a href="#">المقالات ▾</a>
+            <ul class="submenu">
+              <li><a href="articles/ilm.html">علم</a></li>
+              <li><a href="articles/kutub.html">كتب</a></li>
+              <li><a href="articles/fikr.html">فكر</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="about.html">حول طومارنت</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </nav>
+      
+      
+  <nav>
+    <a href="../index.html">الرئيسية</a> |
+    <a href="articles.html">المقالات</a>
+  </nav>
+<main>
+  <h1>أول مقالة</h1>
+  <p><strong>تاريخ النشر:</strong> ٢٩ أبريل ٢٠٢٥</p>
+  <p><strong>الكاتب:</strong> البراء أحمد الحربي</p>
+
+  <hr>
+
+  <p>
+    تجربة <strong>أول مقالة</strong> لي وانا أكتبها في هذا الموقع، حيث أستطيع أن أشارك أفكاري وتجربتي مع <i>الآخرين</i>
+    <br>
+  </p>
+
+  <p>
+    لهذا السبب، فإن تعزيز المعرفة والقراءة يعتبر من أهم المهام لكل شخص يريد التغيير.
+  </p>
+</main>
+  <footer>
+    <p>&copy; ٢٠٢٥ طومارنت - جميع الحقوق محفوظة</p>
+  </footer>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('navMenu');
+  menu.classList.toggle('active');
+}
+
+// toggle submenu when clicking on "المقالات"
+document.addEventListener('DOMContentLoaded', function () {
+  const submenuTrigger = document.querySelector('.has-submenu > a');
+  submenuTrigger.addEventListener('click', function (e) {
+    e.preventDefault(); // prevent "#" from jumping
+    this.parentElement.classList.toggle('active');
+  });
+});
+</script>
+
+    
+</body>
+</html>
