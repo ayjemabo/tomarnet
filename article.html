@@ -40,46 +40,13 @@
           <div id="searchResults" class="card-grid" style="margin-top: 20px;"></div>
 
           
-<h1>مرحبًا بكم في طومارنت</h1>
-        <h2 class="section-title">أحدث المقالات</h2>
-       <h2>مقال مميز</h2>
-            <p>اكتشف مقالاتنا المميزة التي تعكس أفكارًا جديدة وتجارب ملهمة.</p>
 
-            <hr>
-        <section class="featured-article">
-     
-            <img src="images/طومارنت.png" alt="مقال مميز">
-            <div class="featured-content">
-              <h2><a href="articles/article1.html">مقال مميز: قوة المعرفة</a></h2>
-              <p style="color: white;">تعرف على كيف يمكن لفكرة واحدة أن تغيّر مسار حضارة كاملة، ولماذا المعرفة هي مفتاح المستقبل...</p>
-            </div>
-          </section>
-          
-          <div class="category-filters">
-            <button onclick="filterArticles('all')">الكل</button>
-            <button onclick="filterArticles('علم')">علم</button>
-            <button onclick="filterArticles('تاريخ')">تاريخ</button>
-            <button onclick="filterArticles('فكر')">فكر</button>
-            <button onclick="filterArticles('أدب')">أدب</button>
-          </div>
-          
-      
-          <div id="loadingMessage">جاري تحميل المقالات...</div>
-          <div id="homepageArticles" class="card-grid"></div>
+              <h1 id="articleTitle">تحميل...</h1>
+              <p id="articleMeta" class="meta"></p>
+              <img id="articleImage" src="" alt="" style="max-width: 100%; border-radius: 12px; margin: 20px 0;">
+              <p id="articleContent"></p>
           
 
-        <section class="category-banners">
-            <h2 class="section-title">استكشف حسب التصنيف</h2>
-          
-            <div class="category-grid">
-              <a href="categories/ilm.html" class="category-box">📘 علم</a>
-              <a href="categories/fikr.html" class="category-box">📙 فكر</a>
-              <a href="categories/adab.html" class="category-box">📗 أدب</a>
-              <a href="categories/tarikh.html" class="category-box">📕 تاريخ</a>
-            </div>
-          </section>
-          
-      </main>
       
     <nav class="slide-menu" id="navMenu">
         <ul>
@@ -123,8 +90,55 @@ function toggleDarkMode() {
   document.body.classList.toggle('dark');
 }
 
+const urlParams = new URLSearchParams(window.location.search);
+const articleId = urlParams.get("id");
 
+
+
+fetch("https://script.google.com/macros/s/AKfycbyzOu2QdWhOuLUD25e2gMLyEQk_kBlEN5GRVnQElpVVHCqX-N0TUNhSfRLBVSnVNJgT/exec")
+  .then(res => res.json())
+  .then(data => {
+    const article = data.find(a => a["id"] === articleId);
+    if (!article) {
+      document.body.innerHTML = "<h2>المقال غير موجود</h2>";
+      return;
+    }
+
+    // Set title
+    document.getElementById("articleTitle").textContent = article["عنوان المقال"];
+
+    const rawDate = article["التاريخ"];
+const dateObj = new Date(rawDate);
+
+// Format date: ٢٩ أبريل ٢٠٢٥
+const months = [
+  "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+  "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+];
+const formattedDate = `${dateObj.getDate()} ${months[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
+
+// Insert bold and formatted lines
+document.getElementById("articleMeta").innerHTML = `
+  <div><strong>تاريخ النشر:</strong> ${formattedDate}</div>
+  <div><strong>الكاتب:</strong> ${article["الكاتب"] || "غير معروف"}</div>
+`;
+
+
+    // Set image
+    document.getElementById("articleImage").src =
+      article["الرابط إلى صورة (غير الزامي)"] || "images/default.jpg";
+
+    // Set content
+    document.getElementById("articleContent").textContent = article["النص"];
+  });
 </script>
+
+
+
+
+
+
+
 
         
         

@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
-  <title>أول مقالة - مكتبتي</title>
+  <title>أول مقالة - طومارنت</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مقالة عن تاريخ الكتابة وأهميتها في نقل المعرفة.">
+  <meta name="keywords" content="كتابة, معرفة, تاريخ, طومارنت">
+  <link rel="icon" type="image/png" href="images/طومارنت.png">
+  <link rel="stylesheet" href="css/font-awesome.min.css"> 
+  <base href="../">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     <button class="logo-button" onclick="toggleMenu()">
@@ -13,9 +24,12 @@
   
     <header class="site-header">
       <div class="header-content">
-        <div class="header-center">طومارنت</div>
+        <div class="header-center"><a href="../index.html">طومارنت</a></div>
       </div>
     </header>
+
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
+    <!-- <button class="search-toggle" onclick="toggleSearch()">🔍</button> -->
 
     <nav class="slide-menu" id="navMenu">
         <ul>
@@ -23,20 +37,22 @@
           <li class="has-submenu">
             <a href="#">المقالات ▾</a>
             <ul class="submenu">
-              <li><a href="articles/ilm.html">علم</a></li>
-              <li><a href="articles/kutub.html">كتب</a></li>
-              <li><a href="articles/fikr.html">فكر</a></li>
+              <li><a href="categories/ilm.html">علم</a></li>
+              <li><a href="categories/kutub.html">كتب</a></li>
+              <li><a href="categories/fikr.html">فكر</a></li>
+              <li><a href="categories/tarikh.html">تاريخ</a></li>
             </ul>
           </li>
           
-          <li><a href="about.html">حول طومارنت</a></li>
+          <li><a href="submit.html">إرسال مقال</a></li>
+<li><a href="about.html">حول طومارنت</a></li>
           <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
       </nav>
       
       
   <nav>
-    <a href="../index.html">الرئيسية</a> |
+    <a href="index.html">الرئيسية</a> |
     <a href="articles.html">المقالات</a>
   </nav>
 <main>
@@ -72,6 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
     this.parentElement.classList.toggle('active');
   });
 });
+
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+}
 </script>
 
     

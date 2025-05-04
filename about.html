@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>المقالات – طومارنت</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="مقالات متنوعة في مجالات مختلفة.">
-    <meta name="keywords" content="مقالات, علم, تاريخ, أدب, طومارنت">
-    <link rel="icon" type="image/png" href="../images/طومارنت.png"> 
-    <base href="../">
+    <meta name="description" content="موقع طومارنت - منصة لمشاركة المقالات والأفكار الجديدة.">
+    <meta name="keywords" content="مقالات, أفكار, علم, تاريخ, أدب, طومارنت">
+    <link rel="icon" type="image/png" href="images/طومارنت.png">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>حول طومارنت</title>
+    <script src="js/script.js"></script>
+    <base href="../">
 
 </head>
 <body>
@@ -24,22 +24,40 @@
   
     <header class="site-header">
       <div class="header-content">
-        <div class="header-center"><a href="../index.html">طومارنت</a></div>
+        <div class="header-center"><a href="index.html">طومارنت</a></div>
       </div>
     </header>
 
     <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
     <!-- <button class="search-toggle" onclick="toggleSearch()">🔍</button> -->
+    <main class="homepage">
 
+        <div class="search-section">
+            <form class="search-form" action="#" method="get">
+              <input type="text" name="search" placeholder="ابحث عن مقال..." />
+              <button type="submit">🔍</button>
+            </form>
+          </div>
+          <div id="searchResults" class="card-grid" style="margin-top: 20px;"></div>
+
+          
+<h1>عن طومارنت</h1>
+      <hr>
+      <h1>من نحن؟</h1>
+    <p>طومارنت هو مكتبة رقمية عربية تهدف إلى نشر المعرفة بجودة عالية وبأسلوب عصري. بدأ المشروع من حلم صغير ليكون اليوم منصة مفتوحة للجميع.</p>
+        
+      </main>
+      
     <nav class="slide-menu" id="navMenu">
         <ul>
-          
+          <li><a href="index.html">الرئيسية</a></li>
           <li class="has-submenu">
             <a href="#">المقالات ▾</a>
             <ul class="submenu">
-              <li><a href="articles/ilm.html">علم</a></li>
-              <li><a href="articles/kutub.html">كتب</a></li>
-              <li><a href="articles/fikr.html">فكر</a></li>
+              <li><a href="categories/ilm.html">علم</a></li>
+              <li><a href="categories/kutub.html">كتب</a></li>
+              <li><a href="categories/fikr.html">فكر</a></li>
+              <li><a href="categories/tarikh.html">تاريخ</a></li>
             </ul>
           </li>
           
@@ -49,32 +67,10 @@
         </ul>
       </nav>
       
-      
-    
-
-    <main>
-        <h2>قائمة المقالات</h2>
-      
-        <h3>علم</h3>
-        <ul>
-          <li><a href="article1.html">أول مقالة</a></li>
-          <li><a href="article3.html">أهمية القراءة اليومية</a></li>
-        </ul>
-      
-        <h3>تاريخ</h3>
-        <ul>
-          <li><a href="article2.html">المقالة الثانية</a></li>
-        </ul>
-      
-        <h3>أدب</h3>
-        <ul>
-          <li>لا توجد مقالات حالياً</li>
-        </ul>
-      </main>
-
-      <footer>
+    <footer>
         <p>&copy; ٢٠٢٥ طومارنت - جميع الحقوق محفوظة</p>
       </footer>
+
 <script>
 function toggleMenu() {
   const menu = document.getElementById('navMenu');
@@ -93,8 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
 function toggleDarkMode() {
   document.body.classList.toggle('dark');
 }
+
+
 </script>
 
         
+        
+      
 </body>
 </html>
