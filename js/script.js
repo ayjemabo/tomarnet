@@ -18,14 +18,17 @@ const articles = [
   ];
   
   // Handle form submit
+if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.search-form');
+    if (!form) return;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const query = this.search.value.trim();
       showResults(query);
     });
   });
+}
   
   function showResults(query) {
     const resultsDiv = document.getElementById('searchResults');
@@ -104,7 +107,13 @@ const articles = [
   
   
 
+if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', function () {
     showHomepageArticles();
   });
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = { showResults, articles };
+}
   
